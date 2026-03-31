@@ -24,17 +24,18 @@ export default function About() {
     }, []);
 
     return (
-        <section id="about" ref={ref} className="px-16 py-28">
+        <section id="about" ref={ref} className="px-4 sm:px-8 md:px-16 py-16 md:py-28">
             <div className="max-w-[1240px] mx-auto">
                 <div className="font-mono text-lime text-[0.65rem] tracking-[0.22em] uppercase flex items-center gap-3 mb-4">
                     <span className="block w-5 h-px bg-lime" />
                     About
                 </div>
-                <div className="h-px bg-gradient-to-r from-lime to-transparent opacity-25 mb-16" />
+                <div className="h-px bg-gradient-to-r from-lime to-transparent opacity-25 mb-10 md:mb-16" />
 
-                <div className="grid grid-cols-[380px_1fr] gap-20 items-start">
+                {/* Stack on mobile, side-by-side on md+ */}
+                <div className="grid grid-cols-1 md:grid-cols-[340px_1fr] lg:grid-cols-[380px_1fr] gap-10 md:gap-16 lg:gap-20 items-start">
                     {/* Photo */}
-                    <div className="reveal-l relative">
+                    <div className="reveal-l relative max-w-[380px] w-full mx-auto md:mx-0">
                         <div className="relative overflow-hidden">
                             <Image
                                 src="/rahul_formal.jpg"
@@ -43,24 +44,24 @@ export default function About() {
                                 height={507}
                                 className="w-full object-cover object-top grayscale-[15%] hover:grayscale-0 transition-all duration-500"
                             />
-                            <div className="absolute bottom-0 left-0 right-0 px-6 py-5 bg-gradient-to-t from-ink/95 to-transparent flex justify-between items-end">
+                            <div className="absolute bottom-0 left-0 right-0 px-4 md:px-6 py-4 md:py-5 bg-gradient-to-t from-ink/95 to-transparent flex justify-between items-end">
                                 <span className="font-serif text-base font-bold">Rahul Rathod</span>
                                 <span className="font-mono text-[0.6rem] text-gray tracking-widest">
                                     Hyderabad · 2026
                                 </span>
                             </div>
                         </div>
-                        <div className="absolute top-5 left-5 right-[-1.2rem] bottom-[-1.2rem] border border-border2 -z-10" />
+                        <div className="absolute top-5 left-5 right-[-1rem] bottom-[-1rem] border border-border2 -z-10" />
                     </div>
 
                     {/* Content */}
                     <div>
-                        <h2 className="font-serif text-[3.5rem] font-black leading-[1.05] tracking-[-2px] reveal">
+                        <h2 className="font-serif text-[2.5rem] sm:text-[3rem] md:text-[3.5rem] font-black leading-[1.05] tracking-[-2px] reveal">
                             The Dev Behind
                             <br />
                             the <em className="text-lime">Code.</em>
                         </h2>
-                        <p className="text-gray2 text-sm leading-[1.9] font-light mt-6 mb-8 reveal d1">
+                        <p className="text-gray2 text-sm leading-[1.9] font-light mt-5 mb-7 reveal d1">
                             I&apos;m a{" "}
                             <strong className="text-white font-medium">
                                 Computer Science Engineering student
@@ -75,26 +76,26 @@ export default function About() {
                             threats, every project solves a real problem.
                         </p>
 
-                        {/* Metrics */}
+                        {/* Metrics — 2-col always */}
                         <div className="grid grid-cols-2 gap-px border border-border reveal d2">
                             {metrics.map((m, i) => (
                                 <div
                                     key={i}
-                                    className="p-6 bg-ink2 border-r border-b border-border last:border-b-0 even:border-r-0 hover:bg-card transition-all duration-300 hover:scale-[1.01]"
+                                    className="p-4 md:p-6 bg-ink2 border-r border-b border-border last:border-b-0 even:border-r-0 hover:bg-card transition-all duration-300 hover:scale-[1.01]"
                                 >
-                                    <span className="font-serif text-[2rem] font-black text-lime leading-none block">
+                                    <span className="font-serif text-[1.6rem] md:text-[2rem] font-black text-lime leading-none block">
                                         {m.val}
                                     </span>
-                                    <span className="font-mono text-[0.6rem] text-gray uppercase tracking-widest mt-1 block">
+                                    <span className="font-mono text-[0.58rem] text-gray uppercase tracking-widest mt-1 block">
                                         {m.label}
                                     </span>
-                                    <span className="text-[0.73rem] text-gray2 mt-1 block">{m.sub}</span>
+                                    <span className="text-[0.7rem] md:text-[0.73rem] text-gray2 mt-1 block">{m.sub}</span>
                                 </div>
                             ))}
                         </div>
 
                         {/* Education */}
-                        <div className="mt-4 p-5 border border-border flex justify-between items-center gap-4 flex-wrap hover:border-lime transition-colors duration-300 reveal d3">
+                        <div className="mt-4 p-4 md:p-5 border border-border flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 hover:border-lime transition-colors duration-300 reveal d3">
                             <div>
                                 <div className="text-sm font-semibold text-white">
                                     B.Tech — Computer Science Engineering
@@ -103,7 +104,7 @@ export default function About() {
                                     St. Martin&apos;s Engineering College, Hyderabad
                                 </div>
                             </div>
-                            <div className="text-right">
+                            <div className="sm:text-right">
                                 <div className="font-serif text-xl font-black text-lime">6.90 / 10</div>
                                 <span className="font-mono text-[0.6rem] text-gray block mt-0.5">
                                     2022 — 2026
