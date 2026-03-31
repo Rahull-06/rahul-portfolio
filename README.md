@@ -7,7 +7,7 @@ This is my personal developer portfolio showcasing my projects, skills, and expe
 ---
 
 ## 🔥 Live Demo
-👉 https://your-vercel-link.vercel.app
+👉 https://rahul-portfolio-peach.vercel.app
 
 ---
 
@@ -34,7 +34,7 @@ This is my personal developer portfolio showcasing my projects, skills, and expe
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/rahul-portfolio.git
+git clone https://github.com/Rahull-06/rahul-portfolio.git
 
 # Navigate to project folder
 cd rahul-portfolio
